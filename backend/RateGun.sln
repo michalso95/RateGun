@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02E843A4-6F3D-48DF-9A13-9B8E2E20BAA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RateGun.Infrastructure", "src\RateGun.Infrastructure\RateGun.Infrastructure.csproj", "{16409C4D-B0DC-49C6-998A-325738FDA682}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RateGun.Application", "src\RateGun.Application\RateGun.Application.csproj", "{74C54BF1-6067-4B8D-B284-4C5357E1D28C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{16409C4D-B0DC-49C6-998A-325738FDA682}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16409C4D-B0DC-49C6-998A-325738FDA682}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16409C4D-B0DC-49C6-998A-325738FDA682}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16409C4D-B0DC-49C6-998A-325738FDA682}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74C54BF1-6067-4B8D-B284-4C5357E1D28C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74C54BF1-6067-4B8D-B284-4C5357E1D28C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74C54BF1-6067-4B8D-B284-4C5357E1D28C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74C54BF1-6067-4B8D-B284-4C5357E1D28C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{16409C4D-B0DC-49C6-998A-325738FDA682} = {02E843A4-6F3D-48DF-9A13-9B8E2E20BAA8}
+		{74C54BF1-6067-4B8D-B284-4C5357E1D28C} = {02E843A4-6F3D-48DF-9A13-9B8E2E20BAA8}
+	EndGlobalSection
+EndGlobal
