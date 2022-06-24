@@ -1,0 +1,6 @@
+.\backend\src\RateGun.Domain\bin\*
+.\backend\src\RateGun.Domain\obj\*
+.\backend\src\RateGun.Infrastructure\bin\*
+.\backend\src\RateGun.Infrastructure\obj\*
+.\backend\src\RateGun.Application\bin\*
+.\backend\src\RateGun.Application\obj\*
