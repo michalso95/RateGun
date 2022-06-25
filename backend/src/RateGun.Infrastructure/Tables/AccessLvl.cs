@@ -8,5 +8,10 @@ namespace RateGun.Infrastructure
 {
     internal class AccessLvl
     {
+        public Guid Id { get; set; }
+        public string Name { get; set; }
+        public byte Permissions { get; set; }
+
+        public ICollection<User> Users { get; set; } = new HashSet<User>();
     }
 }

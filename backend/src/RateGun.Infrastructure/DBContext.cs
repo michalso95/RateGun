@@ -14,7 +14,7 @@ namespace RateGun.Infrastructure
         public DbSet<User> Users { get; set; }
         public DbSet<AccessLvl> AccessLvls { get; set; }
         public DbSet<Manufacturer> Manufacturers { get; set; }
-        public DbSet<Rate> Rates { get; set; }
+        public DbSet<Review> Reviews { get; set; }
 
     }
 }
