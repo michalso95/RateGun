@@ -24,7 +24,7 @@
 
 <script>
 export default  {
-    name: 'BrandsList',
+    name: 'CategoriesView',
     data: () =>  ({
         brandsArray: [
             {
