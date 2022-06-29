@@ -8,3 +8,4 @@ backend/.vs/*
 frontend/node_modules/*
 frontend/package-lock.json
 /.vs/RateGun/v17
+/backend/src/RateGun.Infrastructure/Database1_log.ldf

@@ -9,7 +9,7 @@ namespace RateGun.Infrastructure
     internal class GunPhoto
     {
         public Guid Id { get; set; }                //PK
-        public Guid? GunId { get; set; }
+        public Guid GunId { get; set; }
         public Gun Gun { get; set; }                //FK
         public string Author { get; set; }
         public string PHOTO { get; set; }           //TODO - how to store photo in DB?        

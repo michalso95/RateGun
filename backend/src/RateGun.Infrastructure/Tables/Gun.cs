@@ -9,17 +9,20 @@ namespace RateGun.Infrastructure
     internal class Gun
 
     {
-        public Guid Id { get;set; }                  //PK
-        public string Model { get;set; }
+        public Guid Id { get; set; }                  //PK
+        public string Model { get; set; }
         public string Version { get; set; }
-        public string Type { get;set; } 
-        public Guid? ManufacturerId { get; set; }
-        public Manufacturer Manufacturer { get;set; }     //FK
-        public string[] Factories { get; set; }
+        public string Type { get; set; }
+        public Guid ManufacturerId { get; set; }
+        public Manufacturer Manufacturer { get; set; }     //FK
+        public Guid GunPlantId { get; set; }
+        public GunPlant GunPlant { get; set; }
         public int ProductionBegin { get; set; }
         public int ProductionFinish { get; set; }
-        public int[] MagazineCapacity { get; set; }
-        public string[] BCallibers { get; set; }    
+        public Guid MagazineCapacityId { get; set; }
+        public MagazineCapacity MagazineCapacity { get; set; }
+        public Guid BulletCalId { get; set; }
+        public BulletCal BulletCal {get;set;}
         public string DescrGeneral { get; set; }
         public string DescrTech { get; set; }
         public string DescrCuriosities { get; set; }

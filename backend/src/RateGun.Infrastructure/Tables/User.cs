@@ -10,7 +10,7 @@ namespace RateGun.Infrastructure
     {
         public Guid Id { get; set; }                //PK
         public string Name { get; set; }
-        public Guid? AccessLvlId { get; set; }
+        public Guid AccessLvlId { get; set; }
         public AccessLvl AccessLvl { get; set; }    //FK
         public int Exp { get; set; }
         public int Lvl { get; set; }

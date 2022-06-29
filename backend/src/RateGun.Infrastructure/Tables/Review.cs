@@ -9,9 +9,9 @@ namespace RateGun.Infrastructure
     internal class Review
     {
         public Guid Id { get; set; }                    //PK
-        public Guid? UserId { get; set; }
+        public Guid UserId { get; set; }
         public User User { get; set; }                  //FK
-        public Guid? GunId { get; set; }
+        public Guid GunId { get; set; }
         public Gun Gun { get; set; }                    //FK
         public decimal RateGeneral {get;set;}
         public decimal RateAccuarcy {get;set;}
