@@ -1,17 +1,41 @@
 <template>
   <div class="view-container">
     <v-sheet elevation="10" color="dark" rounded width="80%" height="95%">
-      <div class="view-toolbar">Here is toolbar for Categories</div>
+      <div class="view-toolbar"><h1>Account</h1></div>
 
-      <div class="view-content">categories ccategories categories</div>
+      <div class="view-content">
+        <v-container v-if="!userLoggedIn">
+          <v-row>
+            <v-col>
+              <LoginComponent />
+            </v-col>
+            <v-divider vertical />
+            <v-col> 
+              <RegisterComponent />
+            </v-col>
+          </v-row>
+        </v-container>
+      </div>
     </v-sheet>
   </div>
 </template>
 
-<script>
+<script lang="js">
+
+import LoginComponent from '../components/Login';
+import RegisterComponent from '../components/Register';
+
 export default {
-  name: "CategoriesView",
-  data: () => ({}),
+  name: "AccountView",
+
+  components: {
+    LoginComponent,
+    RegisterComponent
+  },
+
+  data: () => ({
+    userLoggedIn: false,
+  }),
 };
 </script>
 
@@ -30,7 +54,6 @@ export default {
     max-height: 75px;
     margin-top: 30px;
     margin-bottom: 30px;
-    border: 1px solid white;
     padding: 10px;
   }
 

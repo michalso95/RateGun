@@ -1,17 +1,20 @@
 <template>
   <div class="view-container">
     <v-sheet elevation="10" color="dark" rounded width="80%" height="95%">
-      <div class="view-toolbar">Here is toolbar for Categories</div>
+      <div class="view-toolbar">Here is toolbar GUNS</div>
 
-      <div class="view-content">categories ccategories categories</div>
+      <div class="view-content">Guns guns guns and roses</div>
     </v-sheet>
   </div>
 </template>
 
 <script>
 export default {
-  name: "CategoriesView",
-  data: () => ({}),
+  name: "GunsView",
+
+  data: () => ({
+    //
+  }),
 };
 </script>
 
