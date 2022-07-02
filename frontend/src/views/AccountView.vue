@@ -10,7 +10,7 @@
               <LoginComponent />
             </v-col>
             <v-divider vertical />
-            <v-col> 
+            <v-col>
               <RegisterComponent />
             </v-col>
           </v-row>
@@ -22,8 +22,8 @@
 
 <script lang="js">
 
-import LoginComponent from '../components/Login';
-import RegisterComponent from '../components/Register';
+import LoginComponent from '../components/Login.vue';
+import RegisterComponent from '../components/Register.vue';
 
 export default {
   name: "AccountView",

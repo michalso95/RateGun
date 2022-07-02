@@ -115,12 +115,4 @@ export default {
 .app-bar {
   padding: 0px 50px;
 }
-
-.main-container .v-main__wrap {
-  padding-left: 50px;
-  padding-right: 50px;
-
-  align-items: center;
-  justify-content: center;
-}
 </style>
