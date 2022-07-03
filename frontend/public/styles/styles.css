@@ -1,0 +1,7 @@
+/*
+ * The only purpose of this stylesheet is prevent the app from flashing white
+ * on first load.
+ */
+body {
+  background-color: #3c3c3c;
+}

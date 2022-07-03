@@ -1,1 +1,58 @@
- 
+/*
+ * This file contains overrides for the variables found here:
+ *
+ * https://vuetifyjs.com/en/features/sass-variables/#variable-api
+ *
+ * Note that these variables are automatically included by the build tooling, you
+ * won't find a reference to this file in the other source files.
+ *
+ * The overrides are based on the following desing:
+ *
+ * https://xd.adobe.com/view/434859f3-b8f9-4145-8f9e-b1a69dddabe9-161b/screen/f943d378-6d70-44b6-842b-96f8f1c563b6/specs/
+ */
+
+@import './common.scss';
+@import './components.scss';
+@import './fonts.scss';
+
+// Page //
+
+$body-font-family: 'Roboto';
+
+// Components //
+
+$headings: (
+  'h1': (
+    'size':           21px,
+    'line-height':    50px,
+    'font-family':    'Source Sans Pro',
+    'weight':         normal,
+    'letter-spacing': 0px
+  ),
+  'h2': (
+    'font-family':    'Source Sans Pro',
+    'size':           2rem,
+    'weight':         200
+  ),
+  'h4': (
+    'size':           18px
+  ),
+  'h6': (
+    'font-family':    'Source Sans Pro',
+    'weight':         200
+  )
+);
+
+$app-bar-elevation:   0;
+$dialog-elevation:    0;
+
+$progress-circular-underlay-stroke: rgba($muted-text-color, 0.3);
+
+$snackbar-background-color:   $primary-color;
+
+// Colors //
+
+$material-dark: (
+  'background':     $app-primary-color,
+  'app-bar':        $app-bar-color
+);

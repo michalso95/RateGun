@@ -1,11 +1,17 @@
+/* vue */
 declare module '*.vue' {
-    import Vue from 'vue'
-    export default Vue
+  import Vue from 'vue'
+  export default Vue
 }
 
+/* v-hotkey */
 declare module 'v-hotkey' {
-    import { PluginObject } from "vue";
+  import { PluginObject } from "vue";
 
-    const VueHotKey: PluginObject<Map<string, number>>;
-    export default VueHotKey;
+  // options: alias map
+  const VueHotkey: PluginObject<Map<string, number>>;
+  export default VueHotkey;
 }
+
+/* vue-virtual-scroller */
+declare module 'vue-virtual-scroller';

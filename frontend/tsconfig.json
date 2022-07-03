@@ -2,22 +2,22 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
-    "baseUrl": "./",
-    "moduleResolution": "node",
-    "sourceMap": true,
-    "importHelpers": true,
-    "jsx": "preserve",
-    "allowJs": true,
     "strict": true,
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
+    "allowJs": true,
+    "jsx": "preserve",
+    "importHelpers": true,
+    "moduleResolution": "node",
     "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "baseUrl": ".",
     "types": [
       "webpack-env"
     ],
     "paths": {
       "@/*": [
-        "./*"
+        "src/*"
       ]
     },
     "lib": [
@@ -30,9 +30,11 @@
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx",
-    "src/**/*.vue"
+    "src/**/*.vue",
+    "typings.d.ts"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "src/tests/**/*.*"
   ]
 }
