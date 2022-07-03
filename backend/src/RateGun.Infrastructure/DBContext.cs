@@ -11,6 +11,16 @@ namespace RateGun.Infrastructure
 {
     internal class DBContext : DbContext
     {
+        //entities
+        public DbSet<Gun> Guns { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<AccessLvl> AccessLvls { get; set; }
+        public DbSet<Manufacturer> Manufacturers { get; set; }
+        public DbSet<Review> Reviews { get; set; }
+        public DbSet<MagazineCapacity> MagazineCapacities { get; set; }
+        public DbSet<BulletCal> BulletCals { get; set; }
+        public DbSet<GunPlant> GunPlants { get; set; }
+        
         public DBContext()
         {
 
@@ -38,15 +48,6 @@ namespace RateGun.Infrastructure
             //base.OnModelCreating(modelBuilder);
         }
 
-        //entities
-        public DbSet<Gun> Guns { get; set; }
-        public DbSet<User> Users { get; set; }
-        public DbSet<AccessLvl> AccessLvls { get; set; }
-        public DbSet<Manufacturer> Manufacturers { get; set; }
-        public DbSet<Review> Reviews { get; set; }
-        public DbSet<MagazineCapacity> MagazineCapacities { get; set; }
-        public DbSet<BulletCal> BulletCals { get; set; }
-        public DbSet<GunPlant> GunPlants { get; set; }
 
     }
 }

@@ -7,11 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Database1.mdf" />
-    <None Remove="Database1_log.ldf" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="help" Version="1.0.0" />
     <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="6.0.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.6" />
