@@ -65,8 +65,7 @@ export default {
 
 <style scoped lang="scss">
 .view-container {
-  height: calc(100vh - 64px);
-  max-height: calc(100vh - 64px);
+  min-height: calc(100vh - 64px);
   display: flex;
   flex-direction: column;
   align-items: center;

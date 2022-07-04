@@ -7,7 +7,43 @@
           title = 'Categories'
         />
 
-      <div class="view-content">categories ccategories categories</div>
+      <div class="view-content">
+            <v-card
+              class="d-flex flex-wrap"
+              flat
+              tile
+            >
+              <v-card
+                v-for="item in categories"
+                :key="item.id"
+                class="mx-auto mt-3"
+                min-width="350"
+                max-width="350"
+              >
+                <v-img
+                  v-bind:src= item.image
+                  height="200px"
+                ></v-img>
+
+                <v-card-title>
+                  {{item.title}}
+                </v-card-title>
+
+                <v-card-subtitle>
+                  {{item.description}}
+                </v-card-subtitle>
+
+                <v-card-actions>
+                  <v-btn
+                    color="blue lighten-2"
+                    text
+                  >
+                    Szczegóły
+                  </v-btn>
+                </v-card-actions>
+              </v-card>
+            </v-card>
+      </div>
     </v-sheet>
   </div>
 </template>
@@ -22,7 +58,57 @@ export default {
   },
 
   data: () => ({
-    previous: ''
+    previous: '',
+    categories: [
+      {
+        id: 0,
+        title: 'Karabiny',
+        image: '/images/rifle.png',
+        description: 'Bla bla bla o karabinach'
+      },
+      {
+        id: 1,
+        title: 'Pistolety maszynowe',
+        image: '/images/machinePistol.png',
+        description: 'Bla bla bla o pistoletach maszynowych'
+      },
+      {
+        id: 2,
+        title: 'Broń krótka',
+        image: '/images/pistol.png',
+        description: 'Bla bla bla o broni krótkiej'
+      },
+      {
+        id: 3,
+        title: 'Karabiny wyborowe',
+        image: '/images/sniper.png',
+        description: 'Bla bla bla o karabinach ale wyborowych'
+      },
+      {
+        id: 4,
+        title: 'Akcesoria',
+        image: '/images/accessories.png',
+        description: 'Bla bla bla o akcesoriach'
+      },
+      {
+        id: 5,
+        title: 'Karabiny again',
+        image: '/images/rifle.png',
+        description: 'Bla bla bla o tym że potrzebujemy danych'
+      },
+      {
+        id: 6,
+        title: 'Pistolety again',
+        image: '/images/pistol.png',
+        description: 'Bla bla bla o pistoletach again'
+      },
+      {
+        id: 7,
+        title: 'Inna kategoria',
+        image: '/images/logo.png',
+        description: 'Bla bla bla o innych rzeczach'
+      },
+    ]
   }),
 
   beforeRouteEnter(to, from, next) {
@@ -35,8 +121,7 @@ export default {
 
 <style scoped lang="scss">
 .view-container {
-  height: calc(100vh - 64px);
-  max-height: calc(100vh - 64px);
+  min-height: calc(100vh - 64px);
   display: flex;
   flex-direction: column;
   align-items: center;

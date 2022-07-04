@@ -2,7 +2,7 @@
   <v-app id="app">
     <v-app-bar dark app height="50px" class="app-bar">
       <div class="logo">
-        <img src="" />
+        <img src="images/logo.png" />
         <div class="ml-3 text">RATE GUN</div>
       </div>
 
