@@ -1,7 +1,11 @@
 <template>
   <div class="view-container">
     <v-sheet elevation="10" color="dark" rounded width="80%" height="95%">
-      <div class="view-toolbar"><h1>Account</h1></div>
+      <ViewToolbar
+          class = "view-toolbar"
+          :previousRoute = "previous"
+          title = 'Account'
+        />
 
       <div class="view-content">
         <v-container v-if="!userLoggedIn">
@@ -24,18 +28,27 @@
 
 import LoginComponent from '../components/Login.vue';
 import RegisterComponent from '../components/Register.vue';
+import ViewToolbar from '../components/ViewToolbr.vue';
 
 export default {
   name: "AccountView",
 
   components: {
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ViewToolbar
   },
 
   data: () => ({
+    previous: '',
     userLoggedIn: false,
   }),
+
+  beforeRouteEnter(to, from, next) {
+    next(component => {
+      component.previous = from.path;
+    });
+  },
 };
 </script>
 

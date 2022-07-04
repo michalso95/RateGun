@@ -1,7 +1,11 @@
 <template>
   <div class="view-container">
     <v-sheet elevation="10" color="dark" rounded width="80%" height="95%">
-      <div class="view-toolbar">Here is toolbar BRANDS</div>
+        <ViewToolbar
+          class = "view-toolbar"
+          :previousRoute = "previous"
+          title = 'Brands'
+        />
 
       <div class="view-content">
         <v-list dense>
@@ -23,10 +27,17 @@
 </template>
 
 <script>
+import ViewToolbar from '../components/ViewToolbr.vue';
+
 export default {
   name: "BrandsView",
 
+  components: {
+    ViewToolbar
+  },
+
   data: () => ({
+    previous: '',
     brandsArray: [
       {
         id: 0,
@@ -42,13 +53,19 @@ export default {
       },
     ],
   }),
+
+  beforeRouteEnter(to, from, next) {
+    next(component => {
+      component.previous = from.path;
+    });
+  },
+
 };
 </script>
 
 <style scoped lang="scss">
 .view-container {
-  height: calc(100vh - 64px);
-  max-height: calc(100vh - 64px);
+  min-height: calc(100vh - 64px);
   display: flex;
   flex-direction: column;
   align-items: center;

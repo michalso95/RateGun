@@ -1,7 +1,11 @@
 <template>
   <div class="view-container">
     <v-sheet elevation="10" color="dark" rounded width="80%" height="95%">
-      <div class="view-toolbar">Here is toolbar GUNS</div>
+      <ViewToolbar
+          class = "view-toolbar"
+          :previousRoute = "previous"
+          title = 'Guns'
+        />
 
       <div class="view-content">Guns guns guns and roses</div>
     </v-sheet>
@@ -9,12 +13,23 @@
 </template>
 
 <script>
+import ViewToolbar from '../components/ViewToolbr.vue';
 export default {
   name: "GunsView",
 
+  components: {
+    ViewToolbar
+  },
+
   data: () => ({
-    //
+    previous: '',
   }),
+
+  beforeRouteEnter(to, from, next) {
+    next(component => {
+      component.previous = from.path;
+    });
+  },
 };
 </script>
 
