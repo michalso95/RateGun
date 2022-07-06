@@ -17,6 +17,7 @@
             min-width="20%"
             max-width="20%"
             elevation="10"
+            :to="currentRoute+'/' + item.link"
           >
             <v-card-title>
               <v-icon>mdi-pistol</v-icon> <v-spacer></v-spacer> {{ item.title }}
@@ -56,31 +57,37 @@ export default {
         id: 0,
         title: "Beretta",
         description: "Jedno zdanie",
+        link: "Beretta",
       },
       {
         id: 1,
         title: "CZ",
         description: "Jedno zdanie",
+        link: "CZ",
       },
       {
         id: 2,
         title: "Colt",
         description: "Jedno zdanie",
+        link: "Colt",
       },
       {
         id: 3,
         title: "Need",
         description: "Jedno zdanie",
+        link: "Need",
       },
       {
         id: 4,
         title: "More",
         description: "Jedno zdanie",
+        link: "More",
       },
       {
         id: 5,
         title: "Data",
         description: "Jedno zdanie",
+        link: "Data",
       }
     ],
   }),
@@ -88,6 +95,9 @@ export default {
   computed: {
     filteredData() {
       return this.brands.filter(x=> x.title.toLowerCase().startsWith(this.filterByNameString.toLowerCase()));
+    },
+    currentRoute() {
+      return this.$route.fullPath;
     }
   },
 
@@ -130,8 +140,9 @@ export default {
     overflow: hidden;
     padding-top: 30px;
     padding-bottom: 30px;
-    padding:10px;
+    padding: 10px;
     min-height: calc(100vh - 64px);
+    margin: auto;
   }
 }
 </style>

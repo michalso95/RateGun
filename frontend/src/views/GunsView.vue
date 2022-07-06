@@ -17,6 +17,7 @@
             min-width="20%"
             max-width="20%"
             elevation="10"
+            :to="currentRoute+'/' + item.link"
           >
             <v-img v-bind:src="item.image" height="200px"></v-img>
 
@@ -58,36 +59,42 @@ export default {
         title: "Pistolet Maszynowy PM – 98",
         image: "/images/rifle.png",
         description: "Bla bla bla o Pistolet Maszynowy PM – 98",
+        link: "pistoletMaszynowyPm98",
       },
       {
         id: 1,
         title: "Pistolet Maszynowy PM – 06",
         image: "/images/machinePistol.png",
         description: "Bla bla bla o Pistolet Maszynowy PM – 06",
+        link: "pistoletMaszynowyPm06",
       },
       {
         id: 2,
         title: "CZ Scorpion EVO",
         image: "/images/pistol.png",
         description: "Bla bla bla o evo",
+        link: "czScorpionEvo",
       },
       {
         id: 3,
         title: "CZ 512",
         image: "/images/sniper.png",
         description: "Bla bla bla o 512",
+        link: "cz512",
       },
       {
         id: 4,
         title: "CZ-USA Sport",
         image: "/images/accessories.png",
         description: "Bla bla bla o sport",
+        link: "czUsaSport",
       },
       {
         id: 5,
         title: "CZ Bren",
         image: "/images/rifle.png",
         description: "Bla bla bla o Bren",
+        link: "czBren",
       },
     ],
   }),
@@ -95,6 +102,9 @@ export default {
   computed: {
     filteredData() {
       return this.categories.filter(x=> x.title.toLowerCase().startsWith(this.filterByNameString.toLowerCase()));
+    },
+    currentRoute() {
+      return this.$route.fullPath;
     }
   },
 

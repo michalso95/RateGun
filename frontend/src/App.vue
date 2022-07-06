@@ -58,14 +58,15 @@
     <v-footer padless>
       <v-row justify="center" no-gutters>
         <v-btn
-          v-for="link in links"
-          :key="link"
+          v-for="link in dataCategories"
+          :key="link.text"
           color="white"
           text
           rounded
           class="my-2"
+          :to="'/data/' + link.link"
         >
-          {{ link }}
+          <v-icon>{{link.icon}}</v-icon> {{link.text}}
         </v-btn>
         <v-col class="primary lighten-2 py-4 text-center white--text" cols="12">
           2022 — <strong>RateGun @Sokolowski&Sokolowski</strong>
@@ -80,18 +81,38 @@ export default {
   name: "App",
 
   data: () => ({
-    links: [
-      "Nie",
-      "wiem",
-      "czy",
-      "to",
-      "zostawic",
-      "Ale",
-      "mozna tu",
-      "wrzucic linki",
-      "albo icony",
-      "cokolwiek",
-    ],
+    dataCategories: [
+        {
+          text: 'Dane techniczne',
+          icon: 'mdi-relative-scale',
+          link: 'technicalData'
+        },
+        {
+          text: 'Opinie',
+          icon: 'mdi-comment-quote',
+          link: 'reviews'
+        },
+        {
+          text: 'Amunicja',
+          icon: 'mdi-ammunition',
+          link: 'ammunition'
+        },
+        {
+          text: 'Produkcja',
+          icon: 'mdi-hammer-wrench',
+          link: 'producer'
+        },
+        {
+          text: 'Opis',
+          icon: 'mdi-book-open-variant',
+          link: 'description'
+        },
+        {
+          text: 'Galeria',
+          icon: 'mdi-camera',
+          link: 'photos'
+        }
+      ]
   }),
 };
 </script>

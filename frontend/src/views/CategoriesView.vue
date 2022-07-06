@@ -17,6 +17,7 @@
             min-width="20%"
             max-width="20%"
             elevation="10"
+            :to=" currentRoute + item.link"
           >
             <v-img v-bind:src="item.image" height="200px"></v-img>
 
@@ -58,48 +59,56 @@ export default {
         title: "Karabiny",
         image: "/images/rifle.png",
         description: "Bla bla bla o karabinach",
+        link: "rifles"
       },
       {
         id: 1,
         title: "Pistolety maszynowe",
         image: "/images/machinePistol.png",
         description: "Bla bla bla o pistoletach maszynowych",
+        link: "machinePistols"
       },
       {
         id: 2,
         title: "Broń krótka",
         image: "/images/pistol.png",
         description: "Bla bla bla o broni krótkiej",
+        link: "pistols"
       },
       {
         id: 3,
         title: "Karabiny wyborowe",
         image: "/images/sniper.png",
         description: "Bla bla bla o karabinach ale wyborowych",
+        link: "specialRifles"
       },
       {
         id: 4,
         title: "Akcesoria",
         image: "/images/accessories.png",
         description: "Bla bla bla o akcesoriach",
+        link: "accesories"
       },
       {
         id: 5,
         title: "Karabiny again",
         image: "/images/rifle.png",
         description: "Bla bla bla o tym że potrzebujemy danych",
+        link: "riflesAgain"
       },
       {
         id: 6,
         title: "Pistolety again",
         image: "/images/pistol.png",
         description: "Bla bla bla o pistoletach again",
+        link: "pistolsAgain"
       },
       {
         id: 7,
         title: "Inna kategoria",
         image: "/images/logo.png",
         description: "Bla bla bla o innych rzeczach",
+        link: "other"
       },
     ],
   }),
@@ -107,6 +116,12 @@ export default {
   computed: {
     filteredData() {
       return this.categories.filter(x=> x.title.toLowerCase().startsWith(this.filterByNameString.toLowerCase()));
+    },
+    currentRoute() {
+      if (this.$route.path.endsWith('/')) {
+        return this.$route.path;
+      }
+      return this.$route.path + '/';
     }
   },
 
