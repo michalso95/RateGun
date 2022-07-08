@@ -1,32 +1,25 @@
 <template>
   <div class="view-container">
     <v-sheet elevation="10" color="dark" rounded width="80%" height="95%">
-        <ViewToolbar
-          class = "view-toolbar"
-          :previousRoute = "previous"
-          title = 'Brands'
-          @onSearchTextInput = "filterByName"
-        />
+      <v-breadcrumbs :items="breadcrumbs">
+        <template v-slot:divider>
+          <v-icon>mdi-forward</v-icon>
+        </template>
+      </v-breadcrumbs>
 
       <div class="view-content">
         <v-row>
           <v-col cols="2">
-            <GunDataCategories class="categoriesMenu"/>
+            <GunDataCategories class="categoriesMenu" />
           </v-col>
           <v-col>
-            <CategoriesView
-              v-if="!this.categoryName && !this.brandName && !this.gunName"
-            />
-            <BrandsView
-              v-else-if="this.categoryName && !this.brandName && !this.gunName"
-            />
-            <GunsView
-              v-else-if="this.categoryName && this.brandName && !this.gunName"
-            />
             <SpecificGunItem
-              v-else-if="this.categoryName && this.brandName && this.gunName"
+              v-if="this.categoryName && this.brandName && !this.gunName"
             />
-            <span v-else> LOL nic tu nie ma </span>
+            <CatalogComponent
+              v-else
+              :catalogDataFor="catalogData"
+            />
           </v-col>
         </v-row>
       </div>
@@ -35,12 +28,9 @@
 </template>
 
 <script lang="js">
-import ViewToolbar from '../components/ViewToolbr.vue';
 import GunDataCategories from '../components/GunDataCategories.vue';
-import CategoriesView from './CategoriesView.vue';
-import BrandsView from './BrandsView.vue';
-import GunsView from './GunsView.vue';
 import SpecificGunItem from '../components/SpecificGunItem.vue';
+import CatalogComponent from '../components/CatalogComponent.vue';
 
 export default {
   name: "SelectorView",
@@ -52,26 +42,49 @@ export default {
   },
 
   components: {
-    ViewToolbar,
     GunDataCategories,
-    CategoriesView,
-    BrandsView,
-    GunsView,
-    SpecificGunItem
+    SpecificGunItem,
+    CatalogComponent
   },
 
   data: () => ({
     previous: '',
     filterByNameString: '',
+    breadcrumbs: [],
   }),
 
   computed: {
-    filteredData() {
-      return this.brands.filter(x=> x.title.toLowerCase().startsWith(this.filterByNameString.toLowerCase()));
+    catalogData() {
+      if (!this.categoryName && !this.brandName && !this.gunName)
+        return 'category';
+      else if (this.categoryName && !this.brandName && !this.gunName)
+        return 'brands';
+      else if (this.categoryName && this.brandName && !this.gunName)
+        return 'guns';
+      else if (this.categoryName && this.brandName && !this.gunName)
+        return this.gunName;
+      else
+        return '';
     }
   },
 
   mounted() {
+    this.breadcrumbs.push({
+      title: this.categoryName,
+      disabled: false,
+      href: '/selector/'+this.categoryName
+    });
+    this.breadcrumbs.push({
+      title: this.brandName,
+      disabled: false,
+      href: '/selector/'+this.brandName
+    });
+    this.breadcrumbs.push({
+      title: this.gunName,
+      disabled: false,
+      href: '/selector/'+this.gunName
+    });
+
     console.log(this.brandName);
     console.log(this.categoryName);
     console.log(this.gunName);
@@ -116,7 +129,7 @@ export default {
     overflow: hidden;
     padding-top: 30px;
     padding-bottom: 30px;
-    padding:10px;
+    padding: 10px;
     min-height: calc(100vh - 64px);
   }
 

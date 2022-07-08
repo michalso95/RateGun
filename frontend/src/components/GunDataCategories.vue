@@ -6,7 +6,7 @@
             <v-list-item
               v-for="(item, i) in dataCategories"
               :key="i"
-              :to="'/data/'+item.link"
+              :to="'/selector/data/'+item.link"
             >
                 <v-list-item-icon>
                   <v-icon v-text="item.icon"></v-icon>

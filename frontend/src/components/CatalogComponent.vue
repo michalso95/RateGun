@@ -1,0 +1,51 @@
+<template>
+  <v-card class="d-flex flex-wrap" flat>
+    <v-card
+      v-for="item in filteredData"
+      :key="item.id"
+      class="mx-8 mt-5"
+      min-width="20%"
+      max-width="20%"
+      elevation="10"
+      :to="currentRoute + item.link"
+    >
+      <v-img v-bind:src="item.image" height="200px"></v-img>
+
+      <v-card-title>
+        {{ item.name }}
+      </v-card-title>
+
+      <v-card-subtitle>
+        {{ item.description }}
+      </v-card-subtitle>
+
+      <v-card-actions>
+        <v-btn color="blue lighten-2" text>
+          Szczegóły
+        </v-btn>
+      </v-card-actions>
+    </v-card>
+  </v-card>
+</template>
+
+<script lang="js">
+
+export default {
+  name: "CatalogComponent",
+
+  props: {
+    filteredData: Array,
+  },
+
+  computed: {
+    currentRoute() {
+      if (this.$route.path.endsWith('/')) {
+        return this.$route.path;
+      }
+      return this.$route.path + '/';
+    }
+  },
+
+}
+
+</script>
