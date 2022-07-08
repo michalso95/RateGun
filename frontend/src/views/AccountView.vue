@@ -28,7 +28,7 @@
 
 import LoginComponent from '../components/Login.vue';
 import RegisterComponent from '../components/Register.vue';
-import ViewToolbar from '../components/ViewToolbr.vue';
+import ViewToolbar from '../components/ViewToolbar.vue';
 
 export default {
   name: "AccountView",

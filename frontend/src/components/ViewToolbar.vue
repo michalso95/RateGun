@@ -40,6 +40,12 @@ export default {
         return this.previousRoute;
       }
     }
+  },
+
+  methods: {
+    clearSearchField(){
+      this.searchField ='';
+    }
   }
 }
 </script>

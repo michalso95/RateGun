@@ -3,14 +3,14 @@
     <v-sheet elevation="10" color="dark" rounded width="80%" height="95%">
       <v-toolbar-title class="text-h2 ml-10 mt-5">News</v-toolbar-title>
 
-      <div class="view-content mt-10 ml-5">Here is content, so some news and so on</div>
-      <div class="view-content mt-10 ml-5">Here is content, so some news and so on</div>
-      <div class="view-content mt-10 ml-5">Here is content, so some news and so on</div>
-      <div class="view-content mt-10 ml-5">Here is content, so some news and so on</div>
-      <div class="view-content mt-10 ml-5">Here is content, so some news and so on</div>
-      <div class="view-content mt-10 ml-5">Here is content, so some news and so on</div>
-      <div class="view-content mt-10 ml-5">Here is content, so some news and so on</div>
-      <div class="view-content mt-10 ml-5">Here is content, so some news and so on</div>
+      <div class="mt-10 ml-5">Here is content, so some news and so on</div>
+      <div class="mt-10 ml-5">Here is content, so some news and so on</div>
+      <div class="mt-10 ml-5">Here is content, so some news and so on</div>
+      <div class="mt-10 ml-5">Here is content, so some news and so on</div>
+      <div class="mt-10 ml-5">Here is content, so some news and so on</div>
+      <div class="mt-10 ml-5">Here is content, so some news and so on</div>
+      <div class="mt-10 ml-5">Here is content, so some news and so on</div>
+      <div class="mt-10 ml-5">Here is content, so some news and so on</div>
     </v-sheet>
   </div>
 </template>
@@ -51,6 +51,8 @@ export default {
     padding-top: 30px;
     padding-bottom: 30px;
     padding: 10px;
+    min-height: calc(100vh - 64px);
+    margin: auto;
   }
 }
 </style>
