@@ -1,70 +1,70 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import CategoriesView from '../views/CategoriesView.vue';
-import BrandsView from '../views/BrandsView.vue';
-import GunsView from '../views/GunsView.vue';
 import NewsView from '../views/NewsView.vue';
 import AccountView from '../views/AccountView.vue';
 import SelectorView from '../views/SelectorView.vue';
 import SpecificGunItem from '../components/SpecificGunItem.vue';
+import CategoriesCatalogView from '../views/CategoriesCatalogView.vue';
+import BrandsCatalogView from '../views/BrandsCatalogView.vue';
+import GunsCatalogView from '../views/GunsCatalogView.vue';
 
 Vue.use(VueRouter);
 
 const routes = [
     {
         path: '/',
-        component: SelectorView,
-        props: true
+        redirect: '/selector'
     },
     {
         path: '/news',
         component: NewsView
     },
     {
-        path: '/brands',
-        component: BrandsView
+        path: '/brandsCatalog',
+        component: BrandsCatalogView
     },
     {
-        path: '/brands/:brandName',
-        component: CategoriesView,
+        path: '/brandsCatalog/:brandName',
+        component: BrandsCatalogView,
         props: true
     },
     {
-        path: '/brands/:brandName/:categoryName',
-        component: GunsView,
+        path: '/brandsCatalog/:brandName/:categoryName',
+        component: BrandsCatalogView,
         props: true
     },
     {
-        path: '/brands/:brandName/:categoryName/:specificGun',
+        path: '/brandsCatalog/:brandName/:categoryName/:specificGun',
         component: SpecificGunItem,
         props: true
     },
     {
-        path: '/guns',
-        component: GunsView
+        path: '/gunsCatalog',
+        component: GunsCatalogView
     },
     {
-        path: '/guns/:specificGun',
+        path: '/gunsCatalog/:specificGun',
         component: SpecificGunItem,
         props: true
     },
     {
-        path: '/categories',
-        component: CategoriesView
-    },
-    {
-        path: '/categories/:categoryName',
-        component: BrandsView,
+        path: '/categoriesCatalog/',
+        component: CategoriesCatalogView,
         props: true
     },
     {
-        path: '/categories/:categoryName/:brandName',
-        component: GunsView,
+        path: '/categoriesCatalog/:categoryName/',
+        component: CategoriesCatalogView,
         props: true
     },
     {
-        path: '/categories/:categoryName/:brandName/:specificGun',
+        path: '/categoriesCatalog/:categoryName/:brandName',
+        component: CategoriesCatalogView,
+        props: true
+    },
+    {
+        path: '/categoriesCatalog/:categoryName/:brandName/:specificGun',
         component: SpecificGunItem,
         props: true
     },
@@ -73,17 +73,22 @@ const routes = [
         component: AccountView
     },
     {
-        path: '/:categoryName',
+        path: '/selector',
         component: SelectorView,
         props: true
     },
     {
-        path: '/:categoryName/:brandName',
+        path: '/selector/:categoryName',
         component: SelectorView,
         props: true
     },
     {
-        path: '/:categoryName/:brandName/:gunName',
+        path: '/selector/:categoryName/:brandName',
+        component: SelectorView,
+        props: true
+    },
+    {
+        path: '/selector/:categoryName/:brandName/:gunName',
         component: SelectorView,
         props: true
     },
