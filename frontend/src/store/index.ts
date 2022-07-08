@@ -1,17 +1,23 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-Vue.use(Vuex)
+import {guns, GunsState} from './guns.store';
+import {categories, CategoriesState} from './categories.store';
+import {brands, BrandsState} from './brands.store';
+
+Vue.use(Vuex);
+
+export interface RootState {
+
+  guns? : GunsState;
+  categories? : CategoriesState;
+  brands? : BrandsState;
+}
 
 export default new Vuex.Store({
-  state: {
-  },
-  getters: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
   modules: {
+    guns: guns,
+    categories: categories,
+    brands: brands
   }
 })
