@@ -35,7 +35,7 @@ export default {
   },
 
   data: () => ({
-    title: 'Brands',
+    title: 'Guns',
     previous: "",
     filterByNameString: '',
   }),
@@ -74,33 +74,4 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
-.view-container {
-  min-height: calc(100vh - 64px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 
-  .view-toolbar {
-    width: 100%;
-    flex: 0px;
-    max-height: 75px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    border: 1px solid white;
-    padding: 10px;
-  }
-
-  .view-content {
-    width: 100%;
-    flex: 1;
-    overflow: hidden;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    padding: 10px;
-    min-height: calc(100vh - 64px);
-    margin: auto;
-  }
-}
-</style>

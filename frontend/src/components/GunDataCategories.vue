@@ -1,12 +1,13 @@
 <template>
-  <v-sheet elevation="10" color="dark" height="95%">
+  <v-sheet elevation="10" color="dark" max-height="95%">
         <v-list dense>
           <v-subheader>Categories</v-subheader>
           <v-list-item-group color="primary">
             <v-list-item
               v-for="(item, i) in dataCategories"
               :key="i"
-              :to="'/selector/data/'+item.link"
+              active-class="active"
+              :to="calculateLink(item.link)"
             >
                 <v-list-item-icon>
                   <v-icon v-text="item.icon"></v-icon>
@@ -58,7 +59,25 @@
         }
       ]
     }),
+
+    methods: {
+      calculateLink(link) {
+        let url = '/selector/'+ link + '/';
+        if(this.$route.params.categoryName)
+          url += this.$route.params.categoryName + '/';
+        if(this.$route.params.brandName)
+          url += this.$route.params.brandName + '/';
+        if(this.$route.params.gunName)
+          url += this.$route.params.gunName + '/';
+        return url;
+      }
+    }
   }
 
 </script>
 
+<style scoped lang="scss">
+.active {
+    color: beige;
+}
+</style>

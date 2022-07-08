@@ -1,11 +1,13 @@
 <template>
-  <v-card class="d-flex flex-wrap" flat>
+  <v-card class="d-flex flex-wrap justify" flat>
     <v-card
       v-for="item in filteredData"
       :key="item.id"
-      class="mx-8 mt-5"
+      class="mx-6 mt-4"
       min-width="20%"
       max-width="20%"
+      max-height="350px"
+      min-height="350px"
       elevation="10"
       :to="currentRoute + item.link"
     >
@@ -49,3 +51,10 @@ export default {
 }
 
 </script>
+
+<style scoped lang="scss">
+.justify {
+  align-items: center;
+  justify-content: center;
+}
+</style>

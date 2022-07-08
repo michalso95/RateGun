@@ -5,6 +5,18 @@
         <img src="images/logo.png" />
         <div class="ml-3 text">RATE GUN</div>
       </div>
+      <v-spacer></v-spacer>
+      <v-btn
+        v-for="link in dataCategories"
+        :key="link.text"
+        color="white"
+        text
+        rounded
+        class="my-2"
+        :to="calculateLink(link.link)"
+      >
+        <v-icon>{{ link.icon }}</v-icon> {{ link.text }}
+      </v-btn>
 
       <v-spacer></v-spacer>
 
@@ -57,17 +69,6 @@
 
     <v-footer padless>
       <v-row justify="center" no-gutters>
-        <v-btn
-          v-for="link in dataCategories"
-          :key="link.text"
-          color="white"
-          text
-          rounded
-          class="my-2"
-          :to="'/selector/data/' + link.link"
-        >
-          <v-icon>{{link.icon}}</v-icon> {{link.text}}
-        </v-btn>
         <v-col class="primary lighten-2 py-4 text-center white--text" cols="12">
           2022 — <strong>RateGun @Sokolowski&Sokolowski</strong>
         </v-col>
@@ -77,109 +78,108 @@
 </template>
 
 <script>
-
-import {SET_GUNS, SET_BRANDS, SET_CATEGORIES} from './store/mutations'
+import { SET_GUNS, SET_BRANDS, SET_CATEGORIES } from "./store/mutations";
 
 export default {
   name: "App",
 
   data: () => ({
     dataCategories: [
-        {
-          text: 'Dane techniczne',
-          icon: 'mdi-relative-scale',
-          link: 'technicalData'
-        },
-        {
-          text: 'Opinie',
-          icon: 'mdi-comment-quote',
-          link: 'reviews'
-        },
-        {
-          text: 'Amunicja',
-          icon: 'mdi-ammunition',
-          link: 'ammunition'
-        },
-        {
-          text: 'Produkcja',
-          icon: 'mdi-hammer-wrench',
-          link: 'producer'
-        },
-        {
-          text: 'Opis',
-          icon: 'mdi-book-open-variant',
-          link: 'description'
-        },
-        {
-          text: 'Galeria',
-          icon: 'mdi-camera',
-          link: 'photos'
-        }
-      ]
+      {
+        text: "Dane techniczne",
+        icon: "mdi-relative-scale",
+        link: "technicalData",
+      },
+      {
+        text: "Opinie",
+        icon: "mdi-comment-quote",
+        link: "reviews",
+      },
+      {
+        text: "Amunicja",
+        icon: "mdi-ammunition",
+        link: "ammunition",
+      },
+      {
+        text: "Produkcja",
+        icon: "mdi-hammer-wrench",
+        link: "producer",
+      },
+      {
+        text: "Opis",
+        icon: "mdi-book-open-variant",
+        link: "description",
+      },
+      {
+        text: "Galeria",
+        icon: "mdi-camera",
+        link: "photos",
+      },
+    ],
   }),
 
-  mounted(){
+  mounted() {
     const categories = [
       {
         id: 0,
         name: "Karabiny",
         image: "/images/rifle.png",
         description: "Bla bla bla o karabinach",
-        link: "rifles"
+        link: "rifles",
       },
       {
         id: 1,
         name: "Pistolety maszynowe",
         image: "/images/machinePistol.png",
         description: "Bla bla bla o pistoletach maszynowych",
-        link: "machinePistols"
+        link: "machinePistols",
       },
       {
         id: 2,
         name: "Broń krótka",
         image: "/images/pistol.png",
         description: "Bla bla bla o broni krótkiej",
-        link: "pistols"
+        link: "pistols",
       },
       {
         id: 3,
         name: "Karabiny wyborowe",
         image: "/images/sniper.png",
         description: "Bla bla bla o karabinach ale wyborowych",
-        link: "specialRifles"
+        link: "specialRifles",
       },
       {
         id: 4,
         name: "Akcesoria",
         image: "/images/accessories.png",
         description: "Bla bla bla o akcesoriach",
-        link: "accesories"
+        link: "accesories",
       },
       {
         id: 5,
         name: "Karabiny again",
         image: "/images/rifle.png",
         description: "Bla bla bla o tym że potrzebujemy danych",
-        link: "riflesAgain"
+        link: "riflesAgain",
       },
       {
         id: 6,
         name: "Pistolety again",
         image: "/images/pistol.png",
         description: "Bla bla bla o pistoletach again",
-        link: "pistolsAgain"
+        link: "pistolsAgain",
       },
       {
         id: 7,
         name: "Inna kategoria",
         image: "/images/logo.png",
         description: "Bla bla bla o innych rzeczach",
-        link: "other"
+        link: "other",
       },
     ];
 
     const brands = [
-     {
+      {
         id: 0,
         name: "Beretta",
         description: "Jedno zdanie",
@@ -214,7 +214,7 @@ export default {
         name: "Data",
         description: "Jedno zdanie",
         link: "Data",
-      }
+      },
     ];
 
     const guns = [
@@ -262,15 +262,26 @@ export default {
       },
     ];
 
-
     this.$store.commit(SET_GUNS, guns);
     this.$store.commit(SET_BRANDS, brands);
     this.$store.commit(SET_CATEGORIES, categories);
-  }
+  },
+
+  methods: {
+    calculateLink(link) {
+      let url = "/selector/" + link + "/";
+      if (this.$route.params.categoryName)
+        url += this.$route.params.categoryName + "/";
+      if (this.$route.params.brandName)
+        url += this.$route.params.brandName + "/";
+      if (this.$route.params.gunName) url += this.$route.params.gunName + "/";
+      return url;
+    },
+  },
 };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 .logo {
   display: flex;
   flex-direction: row;
@@ -288,5 +299,36 @@ export default {
 }
 .app-bar {
   padding: 0px 50px;
+}
+
+.view-container {
+  min-height: calc(100vh - 64px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+
+  .view-toolbar {
+    width: 100%;
+    flex: 0px;
+    max-height: 75px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border: 1px solid white;
+    padding: 20px;
+  }
+
+  .view-content {
+    width: 100%;
+    flex: 1;
+    overflow: hidden;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding: 10px;
+    min-height: calc(100vh - 64px);
+    margin: auto;
+    margin-top: 30px;
+  }
 }
 </style>

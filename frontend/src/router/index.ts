@@ -14,7 +14,7 @@ Vue.use(VueRouter);
 const routes = [
     {
         path: '/',
-        redirect: '/selector'
+        redirect: '/selector/technicalData'
     },
     {
         path: '/news',
@@ -74,21 +74,25 @@ const routes = [
     },
     {
         path: '/selector',
+        redirect: '/selector/technicalData'
+    },
+    {
+        path: '/selector/:dataCategoryName/',
         component: SelectorView,
         props: true
     },
     {
-        path: '/selector/:categoryName',
+        path: '/selector/:dataCategoryName/:categoryName',
         component: SelectorView,
         props: true
     },
     {
-        path: '/selector/:categoryName/:brandName',
+        path: '/selector/:dataCategoryName/:categoryName/:brandName',
         component: SelectorView,
         props: true
     },
     {
-        path: '/selector/:categoryName/:brandName/:gunName',
+        path: '/selector/:dataCategoryName/:categoryName/:brandName/:gunName',
         component: SelectorView,
         props: true
     },
