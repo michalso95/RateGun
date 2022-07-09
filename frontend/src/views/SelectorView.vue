@@ -18,6 +18,8 @@
 
             <SpecificGunItem
               v-if="this.categoryName && this.brandName && this.gunName"
+              :gunName="gunName"
+              :dataCategoryName="dataCategoryName"
             />
             <CatalogComponent v-else :filteredData="catalogData" />
           </v-col>
@@ -81,6 +83,9 @@ export default {
       this.prepareBreadcrumbs();
     },
     gunName() {
+      this.prepareBreadcrumbs();
+    },
+    dataCategoryName() {
       this.prepareBreadcrumbs();
     }
   },

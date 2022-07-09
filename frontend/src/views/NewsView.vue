@@ -3,14 +3,16 @@
     <v-sheet elevation="10" color="dark" rounded width="80%" height="95%">
       <v-toolbar-title class="text-h2 ml-10 mt-5">News</v-toolbar-title>
 
-      <div class="mt-10 ml-5">Here is content, so some news and so on</div>
-      <div class="mt-10 ml-5">Here is content, so some news and so on</div>
-      <div class="mt-10 ml-5">Here is content, so some news and so on</div>
-      <div class="mt-10 ml-5">Here is content, so some news and so on</div>
-      <div class="mt-10 ml-5">Here is content, so some news and so on</div>
-      <div class="mt-10 ml-5">Here is content, so some news and so on</div>
-      <div class="mt-10 ml-5">Here is content, so some news and so on</div>
-      <div class="mt-10 ml-5">Here is content, so some news and so on</div>
+      <div class="view-content">
+        <div class="mt-10 ml-5">Here is content, so some news and so on</div>
+        <div class="mt-10 ml-5">Here is content, so some news and so on</div>
+        <div class="mt-10 ml-5">Here is content, so some news and so on</div>
+        <div class="mt-10 ml-5">Here is content, so some news and so on</div>
+        <div class="mt-10 ml-5">Here is content, so some news and so on</div>
+        <div class="mt-10 ml-5">Here is content, so some news and so on</div>
+        <div class="mt-10 ml-5">Here is content, so some news and so on</div>
+        <div class="mt-10 ml-5">Here is content, so some news and so on</div>
+      </div>
     </v-sheet>
   </div>
 </template>

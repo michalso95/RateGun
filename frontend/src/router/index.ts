@@ -4,7 +4,7 @@ import VueRouter from 'vue-router'
 import NewsView from '../views/NewsView.vue';
 import AccountView from '../views/AccountView.vue';
 import SelectorView from '../views/SelectorView.vue';
-import SpecificGunItem from '../components/SpecificGunItem.vue';
+import SpecificGunView from '../views/SpecificGunView.vue';
 import CategoriesCatalogView from '../views/CategoriesCatalogView.vue';
 import BrandsCatalogView from '../views/BrandsCatalogView.vue';
 import GunsCatalogView from '../views/GunsCatalogView.vue';
@@ -36,7 +36,7 @@ const routes = [
     },
     {
         path: '/brandsCatalog/:brandName/:categoryName/:specificGun',
-        component: SpecificGunItem,
+        component: SpecificGunView,
         props: true
     },
     {
@@ -44,8 +44,8 @@ const routes = [
         component: GunsCatalogView
     },
     {
-        path: '/gunsCatalog/:specificGun',
-        component: SpecificGunItem,
+        path: '/gunsCatalog/:gunName',
+        component: SpecificGunView,
         props: true
     },
     {
@@ -64,8 +64,8 @@ const routes = [
         props: true
     },
     {
-        path: '/categoriesCatalog/:categoryName/:brandName/:specificGun',
-        component: SpecificGunItem,
+        path: '/categoriesCatalog/:categoryName/:brandName/:gunName',
+        component: SpecificGunView,
         props: true
     },
     {
