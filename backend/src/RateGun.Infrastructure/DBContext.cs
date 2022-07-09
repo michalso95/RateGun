@@ -20,19 +20,35 @@ namespace RateGun.Infrastructure
         public DbSet<MagazineCapacity> MagazineCapacities { get; set; }
         public DbSet<BulletCal> BulletCals { get; set; }
         public DbSet<GunPlant> GunPlants { get; set; }
-        
+
+        //private variables
+        private readonly string _connectionString;
+
+
         public DBContext()
         {
+            _connectionString = "Filename=DBRateGunMain.db";
+        }
 
+        public DBContext(string connectionString)
+        {
+            _connectionString = connectionString;
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Filename=DBRateGunMain.db", options =>
+            if (String.IsNullOrEmpty(_connectionString))
+            { 
+                
+            }
+            else
             {
-                options.MigrationsAssembly(Assembly.GetExecutingAssembly().FullName);
-            });
-            base.OnConfiguring(optionsBuilder);
+                optionsBuilder.UseSqlite(_connectionString, options =>
+                {
+                    options.MigrationsAssembly(Assembly.GetExecutingAssembly().FullName);
+                });
+                base.OnConfiguring(optionsBuilder);
+            }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

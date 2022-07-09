@@ -6,12 +6,19 @@ using System.Threading.Tasks;
 
 namespace RateGun.Infrastructure
 {
-    internal class AccessLvl
+    public class AccessLvl
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
         public byte Permissions { get; set; }
 
         public ICollection<User> Users { get; set; } = new HashSet<User>();
+
+        public AccessLvl(string name, byte permissions)
+        {
+            Id = Guid.NewGuid();
+            Name = name;
+            Permissions = permissions;
+        }
     }
 }
