@@ -7,3 +7,6 @@ backend/src/RateGun.Application/obj/*
 backend/.vs/*
 frontend/node_modules/*
 frontend/package-lock.json
+/backend/src/RateGun.Infrastructure/Database1_log.ldf
+/.vs
+/backend/src/RateGun.Infrastructure/DBRateGunMain.db

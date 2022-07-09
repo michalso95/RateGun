@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RateGun.Infrastructure
 {
-    internal class Class1
+    internal interface Interface1
     {
     }
 }
