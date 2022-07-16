@@ -9,6 +9,7 @@ export interface ReviewModel {
   user: UserModel;
   gunId: string;
   gun: GunModel;
+  ratings: Array<Rate>;
   rateGeneral: number;
   rateAccuarcy: number;
   rateDefaultAiming: number;
@@ -25,4 +26,10 @@ export interface ReviewModel {
   publicationDate: string;
   text: string;
   title: string;
+}
+
+export interface Rate {
+  type: string;
+  name: string;
+  points: number;
 }

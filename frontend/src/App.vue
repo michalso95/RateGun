@@ -2,7 +2,7 @@
   <v-app id="app">
     <v-app-bar dark app height="50px" class="app-bar">
       <router-link to="/" tag="div" class="logo">
-        <img src="images/logo.png" />
+        <img src="/images/logo.png" />
         <div class="ml-3 text">RATE GUN</div>
       </router-link>
       <v-spacer></v-spacer>
@@ -266,18 +266,53 @@ export default {
         id: 1,
         userName: "jakis username",
         gunName: "CZ 512",
-        rateGeneral: 4,
-        rateAccuarcy: 3.5,
-        rateDefaultAiming: 5,
-        rateFailureFree: 1,
-        rateMaterialQuality: 2,
-        rateLook: 5,
-        rateErgonomic: 2,
-        ratePartsAddsAvailability: 4,
-        rateModifiable: 2.5,
+        ratings: [
+          {
+            name: "Ogólny",
+            type: "rateGeneral",
+            points: 2,
+          },
+          {
+            name: "Celność",
+            type: "rateAccuarcy",
+            points: 1.5,
+          },
+          {
+            name: "Problematyczość",
+            type: "rateFailureFree",
+            points: 3,
+          },
+          {
+            name: "Jakość materiału",
+            type: "rateMaterialQuality",
+            points: 3,
+          },
+          {
+            name: "Wygląd",
+            type: "rateLook",
+            points: 3,
+          },
+          {
+            name: "Ergonomia",
+            type: "rateErgonomic",
+            points: 3,
+          },
+          {
+            name: "Modyfikowalność",
+            type: "rateModifiable",
+            points: 3,
+          },
+          {
+            name: "Widoczność",
+            type: "visibility",
+            points: 3,
+          },
+          {
+            name: "nonCompilancePoints",
+            type: "nonCompilancePoints",
+            points: 2
+          }],
         descrRate: "Wszystko spoko, 2/10.",
-        visibility: 3.5,
-        nonCompilancePoints: 2,
         points: 100,
         publicationDate: "Dzis. Zawsze jest dzis, a jutro nie nadchodzi.",
         text: "Lorem ipsum. Bardzo fajna bron, polecam serdecznie wszystkim niezdecydowanym, bo fajnie się strzela.",
@@ -287,18 +322,53 @@ export default {
         id: 2,
         userName: "inny username",
         gunName: "Beretta F92",
-        rateGeneral: 5,
-        rateAccuarcy: 5,
-        rateDefaultAiming: 5,
-        rateFailureFree: 5,
-        rateMaterialQuality: 5,
-        rateLook: 5,
-        rateErgonomic: 4,
-        ratePartsAddsAvailability: 3,
-        rateModifiable: 2.5,
+        ratings: [
+          {
+            name: "Ogólny",
+            type: "rateGeneral",
+            points: 5,
+          },
+          {
+            name: "Celność",
+            type: "rateAccuarcy",
+            points: 5,
+          },
+          {
+            name: "Problematyczość",
+            type: "rateFailureFree",
+            points: 2.5,
+          },
+          {
+            name: "Jakość materiału",
+            type: "rateMaterialQuality",
+            points: 3.5,
+          },
+          {
+            name: "Wygląd",
+            type: "rateLook",
+            points: 2,
+          },
+          {
+            name: "Ergonomia",
+            type: "rateErgonomic",
+            points: 4,
+          },
+          {
+            name: "Modyfikowalność",
+            type: "rateModifiable",
+            points: 5,
+          },
+          {
+            name: "Widoczność",
+            type: "visibility",
+            points: 4,
+          },
+          {
+            name: "nonCompilancePoints",
+            type: "nonCompilancePoints",
+            points: 1
+          }],
         descrRate: "Wszystko spoko, 10/10. Bo Beretta to najfajniejsza",
-        visibility: 1.5,
-        nonCompilancePoints: 5,
         points: 100,
         publicationDate: "Dzis. Zawsze jest dzis, a jutro nie nadchodzi nigdy.",
         text: "Lorem ipsum. Bardzo fajna bron, polecam serdecznie wszystkim niezdecydowanym, bo fajnie się strzela. I tutaj dam troszke dluzszy opis, bo moge i mam fajna klawiature, więc pisze nie dość że szybko to jeszcze sprawia mi to przyjemnosc.",
@@ -308,18 +378,53 @@ export default {
         id: 3,
         userName: "Filip",
         gunName: "CZ nie pamiętam numeru",
-        rateGeneral: 3,
-        rateAccuarcy: 3,
-        rateDefaultAiming: 4.5,
-        rateFailureFree: 3.5,
-        rateMaterialQuality: 5,
-        rateLook: 4,
-        rateErgonomic: 3,
-        ratePartsAddsAvailability: 2.5,
-        rateModifiable: 2.5,
+        ratings: [
+          {
+            name: "Ogólny",
+            type: "rateGeneral",
+            points: 5,
+          },
+          {
+            name: "Celność",
+            type: "rateAccuarcy",
+            points: 4.5,
+          },
+          {
+            name: "Problematyczość",
+            type: "rateFailureFree",
+            points: 3.5,
+          },
+          {
+            name: "Jakość materiału",
+            type: "rateMaterialQuality",
+            points: 2,
+          },
+          {
+            name: "Wygląd",
+            type: "rateLook",
+            points: 5,
+          },
+          {
+            name: "Ergonomia",
+            type: "rateErgonomic",
+            points: 4.5,
+          },
+          {
+            name: "Modyfikowalność",
+            type: "rateModifiable",
+            points: 5,
+          },
+          {
+            name: "Widoczność",
+            type: "visibility",
+            points: 3.5,
+          },
+          {
+            name: "nonCompilancePoints",
+            type: "nonCompilancePoints",
+            points: 2.5
+          }],
         descrRate: "Wszystko spoko, 2/10.",
-        visibility: 3.5,
-        nonCompilancePoints: 5,
         points: 100,
         publicationDate: "Dzis. Zawsze jest dzis, a jutro nie nadchodzi.",
         text: "Lorem ipsum. Oczywiście, że jedyna w swoim rodzaju. Co prawda nie pamiętam dokładnego modelu Twojej broni Filip, ale wiem, że CZ.",

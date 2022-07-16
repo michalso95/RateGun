@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-auto py-5">
+  <div class="mx-auto dataStyle">
     <h2 class="mb-5">{{ title }}</h2>
     <div v-for="review in reviewsList" :key="review.id">
       <GunReviewItem :review="review" />
