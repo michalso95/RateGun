@@ -1,16 +1,8 @@
 <template>
   <div class="mx-auto dataStyle">
-    <h2>{{title}}</h2>
+    <h2 class="mb-5">{{title}}</h2>
     <v-simple-table dark>
       <template v-slot:default>
-        <thead>
-          <tr>
-            <th>
-            </th>
-            <th>
-            </th>
-          </tr>
-        </thead>
         <tbody>
           <tr v-for="keyValue in tableData" :key="keyValue.key">
             <td class="text-left" width="50%">{{ keyValue.key }}</td>

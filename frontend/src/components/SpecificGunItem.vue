@@ -10,6 +10,8 @@
       :curiositiesDescription="curiositiesDescr"
       :historicalDescription="historyDescr"
       title="Opis" />
+    <GunPhotosComponent title="Zdjecia" class="dataStyle"/>
+    <GunReviewsComponent title="Poki co wszystkie reviewsy" />
   </v-card>
 </template>
 
@@ -17,13 +19,17 @@
 
 import GunDataTableComponent from './gunData/GunDataTableComponent';
 import GunDescriptionComponent from './gunData/GunDescriptionComponent';
+import GunPhotosComponent from './gunData/GunPhotosComponent';
+import GunReviewsComponent from './gunData/GunReviewsComponent';
 
 export default {
   name: "SpecificGunItem",
 
   components: {
     GunDataTableComponent,
-    GunDescriptionComponent
+    GunDescriptionComponent,
+    GunPhotosComponent,
+    GunReviewsComponent
   },
 
   data: () => ({
