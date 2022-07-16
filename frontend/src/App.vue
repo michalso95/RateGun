@@ -1,10 +1,10 @@
 <template>
   <v-app id="app">
     <v-app-bar dark app height="50px" class="app-bar">
-      <div class="logo">
+      <router-link to="/" tag="div" class="logo">
         <img src="images/logo.png" />
         <div class="ml-3 text">RATE GUN</div>
-      </div>
+      </router-link>
       <v-spacer></v-spacer>
       <v-btn
         v-for="link in dataCategories"
