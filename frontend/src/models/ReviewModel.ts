@@ -23,4 +23,6 @@ export interface ReviewModel {
   nonCompilancePoints: number;
   points: number;
   publicationDate: string;
+  text: string;
+  title: string;
 }

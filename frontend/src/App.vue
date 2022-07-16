@@ -78,7 +78,7 @@
 </template>
 
 <script>
-import { SET_GUNS, SET_BRANDS, SET_CATEGORIES } from "./store/mutations";
+import { SET_GUNS, SET_BRANDS, SET_CATEGORIES, SET_REVIEWS } from "./store/mutations";
 
 export default {
   name: "App",
@@ -261,10 +261,76 @@ export default {
         link: "czBren",
       },
     ];
+    const reviews = [
+      {
+        id: 1,
+        userName: "jakis username",
+        gunName: "CZ 512",
+        rateGeneral: 4,
+        rateAccuarcy: 3.5,
+        rateDefaultAiming: 5,
+        rateFailureFree: 1,
+        rateMaterialQuality: 2,
+        rateLook: 5,
+        rateErgonomic: 2,
+        ratePartsAddsAvailability: 4,
+        rateModifiable: 2.5,
+        descrRate: "Wszystko spoko, 2/10.",
+        visibility: 3.5,
+        nonCompilancePoints: 2,
+        points: 100,
+        publicationDate: "Dzis. Zawsze jest dzis, a jutro nie nadchodzi.",
+        text: "Lorem ipsum. Bardzo fajna bron, polecam serdecznie wszystkim niezdecydowanym, bo fajnie się strzela.",
+        title: "Fascynująca.",
+      },
+      {
+        id: 2,
+        userName: "inny username",
+        gunName: "Beretta F92",
+        rateGeneral: 5,
+        rateAccuarcy: 5,
+        rateDefaultAiming: 5,
+        rateFailureFree: 5,
+        rateMaterialQuality: 5,
+        rateLook: 5,
+        rateErgonomic: 4,
+        ratePartsAddsAvailability: 3,
+        rateModifiable: 2.5,
+        descrRate: "Wszystko spoko, 10/10. Bo Beretta to najfajniejsza",
+        visibility: 1.5,
+        nonCompilancePoints: 5,
+        points: 100,
+        publicationDate: "Dzis. Zawsze jest dzis, a jutro nie nadchodzi nigdy.",
+        text: "Lorem ipsum. Bardzo fajna bron, polecam serdecznie wszystkim niezdecydowanym, bo fajnie się strzela. I tutaj dam troszke dluzszy opis, bo moge i mam fajna klawiature, więc pisze nie dość że szybko to jeszcze sprawia mi to przyjemnosc.",
+        title: "Olśniewająca!",
+      },
+      {
+        id: 3,
+        userName: "Filip",
+        gunName: "CZ nie pamiętam numeru",
+        rateGeneral: 3,
+        rateAccuarcy: 3,
+        rateDefaultAiming: 4.5,
+        rateFailureFree: 3.5,
+        rateMaterialQuality: 5,
+        rateLook: 4,
+        rateErgonomic: 3,
+        ratePartsAddsAvailability: 2.5,
+        rateModifiable: 2.5,
+        descrRate: "Wszystko spoko, 2/10.",
+        visibility: 3.5,
+        nonCompilancePoints: 5,
+        points: 100,
+        publicationDate: "Dzis. Zawsze jest dzis, a jutro nie nadchodzi.",
+        text: "Lorem ipsum. Oczywiście, że jedyna w swoim rodzaju. Co prawda nie pamiętam dokładnego modelu Twojej broni Filip, ale wiem, że CZ.",
+        title: "Jedyna w swoim rodzaju?",
+      },
+    ];
 
     this.$store.commit(SET_GUNS, guns);
     this.$store.commit(SET_BRANDS, brands);
     this.$store.commit(SET_CATEGORIES, categories);
+    this.$store.commit(SET_REVIEWS, reviews);
   },
 
   methods: {
