@@ -1,17 +1,17 @@
 <template>
   <v-card class="mx-auto">
     <h2 class="ml-8"> {{gunName}} </h2>
-    <GunDataTableComponent :tableData="technical" title="Dane techniczne" class="dataStyle" />
-    <GunDataTableComponent :tableData="ammunition" title="Dane o amunicji" class="dataStyle" />
-    <GunDataTableComponent :tableData="manufacturer" title="Producent" class="dataStyle" />
-    <GunDescriptionComponent
+    <GunDataTableComponent v-if="!dataCategoryName || dataCategoryName=='technicalData'" :tableData="technical" title="Dane techniczne" class="dataStyle" />
+    <GunDataTableComponent v-if="!dataCategoryName || dataCategoryName=='ammunition'" :tableData="ammunition" title="Dane o amunicji" class="dataStyle" />
+    <GunDataTableComponent v-if="!dataCategoryName || dataCategoryName=='producer'" :tableData="manufacturer" title="Producent" class="dataStyle" />
+    <GunDescriptionComponent v-if="!dataCategoryName || dataCategoryName=='description'"
       :generalDescription="generalDescr"
       :technicalDescription="techDescr"
       :curiositiesDescription="curiositiesDescr"
       :historicalDescription="historyDescr"
       title="Opis" />
-    <GunPhotosComponent title="Zdjecia" class="dataStyle"/>
-    <GunReviewsComponent title="Poki co wszystkie reviewsy" />
+    <GunPhotosComponent v-if="!dataCategoryName || dataCategoryName=='photos'" title="Zdjecia" class="dataStyle"/>
+    <GunReviewsComponent v-if="!dataCategoryName || dataCategoryName=='reviews'" title="Poki co wszystkie reviewsy" />
   </v-card>
 </template>
 
@@ -30,6 +30,19 @@ export default {
     GunDescriptionComponent,
     GunPhotosComponent,
     GunReviewsComponent
+  },
+
+  props: {
+    brandName: String,
+    categoryName: String,
+    dataCategoryName: String,
+  },
+
+  mounted() {
+    console.log(this.brandName)
+    console.log(this.categoryName)
+    console.log(this.dataCategoryName)
+    console.log(this.gunName);
   },
 
   data: () => ({
@@ -118,9 +131,6 @@ export default {
   }),
 
   computed: {
-    dataCategoryName() {
-      return this.$route.params.dataCategoryName;
-    },
     gunName() {
       return this.$route.params.gunName;
     }

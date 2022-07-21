@@ -18,8 +18,9 @@
 
             <SpecificGunItem
               v-if="this.categoryName && this.brandName && this.gunName"
-              :gunName="gunName"
               :dataCategoryName="dataCategoryName"
+              :brandName="brandName"
+              :categoryName="categoryName"
             />
             <CatalogComponent v-else :filteredData="catalogData" />
           </v-col>
