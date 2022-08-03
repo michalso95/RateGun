@@ -8,5 +8,6 @@ namespace RateGun.Infrastructure
 {
     internal interface Interface1
     {
+        //not implemented yet
     }
 }

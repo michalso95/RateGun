@@ -28,31 +28,6 @@ namespace RateGun.Infrastructure
         public int Points { get; set; }                 //Number of likes
         public DateTime PublicationDate { get; set; }
 
-        public Review(User user, Gun gun, decimal rateGeneral, string descrRate, int visibility, 
-            decimal? rateAccuarcy = null, decimal? rateDefaultAiming = null, decimal? rateFailureFree = null, 
-            decimal? rateMaterialQuality = null, decimal? rateLook = null, decimal? rateErgonomic = null, 
-            decimal? ratePartsAddsAvailability = null, decimal? rateModifiable = null)
-        {
-            Id = Guid.NewGuid();
-            UserId = user.Id;
-            User = user;
-            GunId = gun.Id;
-            Gun = gun;
-            RateGeneral = rateGeneral;
-            RateAccuarcy = rateAccuarcy;
-            RateDefaultAiming = rateDefaultAiming;
-            RateFailureFree = rateFailureFree;
-            RateMaterialQuality = rateMaterialQuality;
-            RateLook = rateLook;
-            RateErgonomic = rateErgonomic;
-            RatePartsAddsAvailability = ratePartsAddsAvailability;
-            RateModifiable = rateModifiable;
-            DescrRate = descrRate;
-            Visibility = visibility;
-            NonCompilancePoints = 0;
-            Points = 0;
-            PublicationDate = DateTime.UtcNow;
-        }
         //TODO how to add multiphotos to the Review
 
 

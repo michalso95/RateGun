@@ -9,7 +9,7 @@ using Microsoft.Extensions;
 
 namespace RateGun.Infrastructure
 {
-    internal class DBContext : DbContext
+    public class RateGunDBContext : DbContext
     {
         //entities
         public DbSet<Gun> Guns { get; set; }
@@ -20,26 +20,26 @@ namespace RateGun.Infrastructure
         public DbSet<MagazineCapacity> MagazineCapacities { get; set; }
         public DbSet<BulletCal> BulletCals { get; set; }
         public DbSet<GunPlant> GunPlants { get; set; }
+        public DbSet<GunPhoto> GunPhotos { get; set; }
 
         //private variables
         private readonly string _connectionString;
 
-
-        public DBContext()
+        public RateGunDBContext()
         {
             _connectionString = "Filename=DBRateGunMain.db";
         }
 
-        public DBContext(string connectionString)
+        public RateGunDBContext(string connectionString)
         {
             _connectionString = connectionString;
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            if (String.IsNullOrEmpty(_connectionString))
-            { 
-                
+            if (string.IsNullOrEmpty(_connectionString))
+            {
+
             }
             else
             {
@@ -53,15 +53,15 @@ namespace RateGun.Infrastructure
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //// Map table names
-            //modelBuilder.Entity<Blog>().ToTable("Blogs", "test");
-            //modelBuilder.Entity<Blog>(entity =>
-            //{
-            //    entity.HasKey(e => e.BlogId);
-            //    entity.HasIndex(e => e.Title).IsUnique();
-            //    entity.Property(e => e.DateTimeAdd).HasDefaultValueSql("CURRENT_TIMESTAMP");
-            //});
-            //base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Gun>()
+                .Property(r => r.Model)
+                .IsRequired()
+                .HasMaxLength(50);
+
+            modelBuilder.Entity<AccessLvl>()
+                .Property(d => d.Name)
+                .IsRequired();
+
         }
 
 

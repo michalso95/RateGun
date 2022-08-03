@@ -12,11 +12,5 @@ namespace RateGun.Infrastructure
         public int Capacity { get; set; }
 
         public ICollection<Gun> Guns { get; set; } = new HashSet<Gun>();
-
-        public MagazineCapacity(int capacity)
-        {
-            Id = Guid.NewGuid();
-            Capacity = capacity;
-        }
     }
 }

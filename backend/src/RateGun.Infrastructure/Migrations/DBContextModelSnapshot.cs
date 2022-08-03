@@ -9,7 +9,7 @@ using RateGun.Infrastructure;
 
 namespace RateGun.Infrastructure.Migrations
 {
-    [DbContext(typeof(DBContext))]
+    [DbContext(typeof(RateGunDBContext))]
     partial class DBContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

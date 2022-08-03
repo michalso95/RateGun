@@ -13,12 +13,5 @@ namespace RateGun.Infrastructure
         public byte Permissions { get; set; }
 
         public ICollection<User> Users { get; set; } = new HashSet<User>();
-
-        public AccessLvl(string name, byte permissions)
-        {
-            Id = Guid.NewGuid();
-            Name = name;
-            Permissions = permissions;
-        }
     }
 }

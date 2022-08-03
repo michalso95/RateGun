@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "RateGun.Infrastructure": {
+      "commandName": "Project"
+    },
+  }
+}
