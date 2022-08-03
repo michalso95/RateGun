@@ -19,16 +19,5 @@ namespace RateGun.Infrastructure
         public string Mail { get; set; }
 
         public ICollection<Review> Reviews { get; set; } = new HashSet<Review>();
-
-        public User(string name, AccessLvl accessLvl, string mail)
-        {
-            Id = Guid.NewGuid();
-            Name = name;
-            AccessLvlId = accessLvl.Id;
-            AccessLvl = accessLvl;
-            Exp = 0;
-            Lvl = 1;
-            Mail = mail;
-        }
     }
 }

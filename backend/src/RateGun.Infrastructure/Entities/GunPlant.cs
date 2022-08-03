@@ -17,17 +17,5 @@ namespace RateGun.Infrastructure
         public bool? IsRunning { get; set; }
 
         public ICollection<Gun> Guns { get; set; } = new HashSet<Gun>();
-
-        public GunPlant(string name, string location, int yearEstablish, int? yearClose=null, 
-            bool? isRunning = null, string? descr = null)
-        {
-            Id = Guid.NewGuid();
-            Name = name;
-            Descr = descr;
-            Location = location;
-            YearEstablish = yearEstablish;
-            YearClose = yearClose;
-            IsRunning = isRunning;
-        }
     }
 }

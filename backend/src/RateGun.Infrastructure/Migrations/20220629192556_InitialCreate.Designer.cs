@@ -10,7 +10,7 @@ using RateGun.Infrastructure;
 
 namespace RateGun.Infrastructure.Migrations
 {
-    [DbContext(typeof(DBContext))]
+    [DbContext(typeof(RateGunDBContext))]
     [Migration("20220629192556_InitialCreate")]
     partial class InitialCreate
     {
