@@ -6,8 +6,7 @@
       class="mx-6 mt-4"
       min-width="20%"
       max-width="20%"
-      max-height="350px"
-      min-height="350px"
+      min-height="400px"
       elevation="10"
       :to="currentRoute + item.link"
     >
@@ -22,7 +21,7 @@
       </v-card-subtitle>
 
       <v-card-actions>
-        <v-btn color="blue lighten-2" text>
+        <v-btn color="blue lighten-2">
           Szczegóły
         </v-btn>
       </v-card-actions>
