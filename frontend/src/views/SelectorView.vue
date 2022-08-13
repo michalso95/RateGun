@@ -16,6 +16,18 @@
               </template>
             </v-breadcrumbs>
 
+            <v-row v-if="!this.categoryName || !this.brandName || !this.gunName">
+              <v-spacer></v-spacer>
+              <v-col cols="4" class="d-flex mr-5">
+                <v-icon medium>mdi-magnify</v-icon>
+                <v-text-field
+                  v-model="filterByNameString"
+                  label="Start typing"
+                  clearable>
+                </v-text-field>
+              </v-col>
+            </v-row>
+
             <SpecificGunItem
               v-if="this.categoryName && this.brandName && this.gunName"
               :dataCategoryName="dataCategoryName"
@@ -65,13 +77,19 @@ export default {
     }),
     catalogData() {
       if (this.categoryName && this.brandName) {
-        return this.state.guns.all.filter(x=> x.name.toLowerCase().startsWith(this.filterByNameString.toLowerCase()));
+        return this.filterByNameString?.toLowerCase() ?
+          this.state.guns.all.filter(x=> x.name.toLowerCase().startsWith(this.filterByNameString?.toLowerCase())) :
+          this.state.guns.all;
       }
       else if (this.categoryName) {
-        return this.state.brands.all.filter(x=> x.name.toLowerCase().startsWith(this.filterByNameString.toLowerCase()));
+        return this.filterByNameString?.toLowerCase() ?
+        this.state.brands.all.filter(x=> x.name.toLowerCase().startsWith(this.filterByNameString?.toLowerCase())):
+        this.state.brands.all;
       }
       else {
-        return this.state.categories.all.filter(x=> x.name.toLowerCase().startsWith(this.filterByNameString.toLowerCase()));
+        return this.filterByNameString?.toLowerCase() ?
+        this.state.categories.all.filter(x=> x.name.toLowerCase().startsWith(this.filterByNameString?.toLowerCase())):
+        this.state.categories.all;
       }
     },
     gunObject() {
@@ -85,9 +103,16 @@ export default {
     },
     gunName() {
       this.prepareBreadcrumbs();
+      this.filterByNameString = '';
     },
     dataCategoryName() {
       this.prepareBreadcrumbs();
+    },
+    brandName() {
+      this.filterByNameString = '';
+    },
+    categoryName() {
+      this.filterByNameString = '';
     }
   },
 
