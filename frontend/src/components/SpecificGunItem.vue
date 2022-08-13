@@ -1,6 +1,13 @@
 <template>
+<div>
   <v-card class="mx-auto">
     <h2 class="ml-8"> {{gunName}} </h2>
+    <v-row class="d-flex mx-auto">
+      <v-spacer>
+      </v-spacer>
+      <v-btn class="mr-5" @click="addReviewDialog = true"> Nowa opinia
+      </v-btn>
+    </v-row>
     <GunDataTableComponent v-if="!dataCategoryName || dataCategoryName=='technicalData'" :tableData="technical" title="Dane techniczne" class="dataStyle" />
     <GunDataTableComponent v-if="!dataCategoryName || dataCategoryName=='ammunition'" :tableData="ammunition" title="Dane o amunicji" class="dataStyle" />
     <GunDataTableComponent v-if="!dataCategoryName || dataCategoryName=='producer'" :tableData="manufacturer" title="Producent" class="dataStyle" />
@@ -13,6 +20,14 @@
     <GunPhotosComponent v-if="!dataCategoryName || dataCategoryName=='photos'" title="Zdjecia" class="dataStyle"/>
     <GunReviewsComponent v-if="!dataCategoryName || dataCategoryName=='reviews'" title="Poki co wszystkie reviewsy" />
   </v-card>
+
+  <v-dialog v-model="addReviewDialog" max-width="600" persistent>
+    <AddReviewForm
+      v-if="addReviewDialog"
+      @closeDialog="addReviewDialog = false"
+    />
+  </v-dialog>
+</div>
 </template>
 
 <script lang="js">
@@ -21,6 +36,7 @@ import GunDataTableComponent from './gunData/GunDataTableComponent';
 import GunDescriptionComponent from './gunData/GunDescriptionComponent';
 import GunPhotosComponent from './gunData/GunPhotosComponent';
 import GunReviewsComponent from './gunData/GunReviewsComponent';
+import AddReviewForm from './forms/AddReviewForm';
 
 export default {
   name: "SpecificGunItem",
@@ -29,7 +45,8 @@ export default {
     GunDataTableComponent,
     GunDescriptionComponent,
     GunPhotosComponent,
-    GunReviewsComponent
+    GunReviewsComponent,
+    AddReviewForm
   },
 
   props: {
@@ -46,6 +63,7 @@ export default {
   },
 
   data: () => ({
+    addReviewDialog: false,
     technical: [
       {
         key: 'Długość z kolbą złożoną',
