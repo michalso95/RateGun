@@ -59,6 +59,13 @@
             </v-list-item-icon>
             <v-list-item-content> All guns </v-list-item-content>
           </v-list-item>
+
+          <v-list-item to="/management">
+            <v-list-item-icon>
+              <v-icon> mdi-cog </v-icon>
+            </v-list-item-icon>
+            <v-list-item-content> Manage </v-list-item-content>
+          </v-list-item>
         </v-list>
       </v-menu>
     </v-app-bar>

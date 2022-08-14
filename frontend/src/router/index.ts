@@ -8,6 +8,7 @@ import SpecificGunView from '../views/SpecificGunView.vue';
 import CategoriesCatalogView from '../views/CategoriesCatalogView.vue';
 import BrandsCatalogView from '../views/BrandsCatalogView.vue';
 import GunsCatalogView from '../views/GunsCatalogView.vue';
+import ManagementView from '../views/ManagementView.vue';
 
 Vue.use(VueRouter);
 
@@ -15,6 +16,10 @@ const routes = [
     {
         path: '/',
         redirect: '/selector/technicalData'
+    },
+    {
+        path: '/management',
+        component: ManagementView
     },
     {
         path: '/news',

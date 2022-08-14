@@ -8,3 +8,4 @@ export * from './ManufacturerModel';
 export * from './ReviewModel';
 export * from './UserModel';
 export * from './CategoryModel';
+export * from './KeyValueModel';
