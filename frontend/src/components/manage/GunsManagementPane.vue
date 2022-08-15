@@ -11,6 +11,22 @@
             </v-btn>
           </div>
         </div>
+        <div class="d-flex">
+          <v-row>
+            <v-col>
+            </v-col>
+            <v-spacer></v-spacer>
+            <v-col class="d-flex">
+              <v-icon>mdi-magnify</v-icon>
+              <v-text-field
+                v-model="searchField"
+                label="Start typing"
+                clearable
+              >
+              </v-text-field>
+            </v-col>
+          </v-row>
+        </div>
         <v-simple-table>
           <template v-slot:default>
             <thead>
@@ -82,6 +98,7 @@ export default {
       addGunDialog: false,
       editGunDialog: false,
       editedGun: undefined,
+      searchField: ''
     };
   },
   computed: {
@@ -91,7 +108,7 @@ export default {
       },
     }),
     gunsList() {
-      return this.state.guns.all;
+      return this.state.guns.all.filter(x=> x.model.toLowerCase().startsWith(this.searchField.toLowerCase()));
     }
   },
   methods: {

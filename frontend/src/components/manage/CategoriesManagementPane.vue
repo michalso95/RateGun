@@ -11,6 +11,22 @@
             </v-btn>
           </div>
         </div>
+        <div class="d-flex">
+          <v-row>
+            <v-col>
+            </v-col>
+            <v-spacer></v-spacer>
+            <v-col class="d-flex">
+              <v-icon>mdi-magnify</v-icon>
+              <v-text-field
+                v-model="searchField"
+                label="Start typing"
+                clearable
+              >
+              </v-text-field>
+            </v-col>
+          </v-row>
+        </div>
         <v-simple-table>
           <template v-slot:default>
             <thead>
@@ -74,6 +90,7 @@ export default {
       addCategoryDialog: false,
       editCategoryDialog: false,
       editedCategory: undefined,
+      searchField: '',
     };
   },
   computed: {
@@ -83,7 +100,7 @@ export default {
       },
     }),
     categoriesList() {
-      return this.state.categories.all;
+      return this.state.categories.all.filter(x=> x.name.toLowerCase().startsWith(this.searchField.toLowerCase()));
     }
   },
   methods: {
