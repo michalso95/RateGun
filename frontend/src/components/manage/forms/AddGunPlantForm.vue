@@ -40,7 +40,7 @@
           <v-switch
             autofocus
             v-model = "newGunPlant.isRunning"
-            label   = "Link"
+            label   = "Działająca?"
           ></v-switch>
         </v-card-text>
         <v-spacer></v-spacer>

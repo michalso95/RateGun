@@ -5,7 +5,7 @@ import {getOrigin} from '../services/ConnectionService';
 
 import { RootState } from "./index";
 import { ADD_BRAND, SET_BRANDS } from "./mutations";
-import { GET_BRANDS } from "./actions";
+import { GET_BRANDS, EDIT_BRAND } from "./actions";
 import { ManufacturerModel } from "../models";
 
 export interface BrandsState {
@@ -33,6 +33,11 @@ export const brands: Module<BrandsState, RootState> = {
       await axios.get(url).then(r => {
         context.commit(SET_BRANDS, r.data);
       });
+    },
+    async [EDIT_BRAND](context: ActionContext<BrandsState, RootState>, brand: ManufacturerModel) {
+      const url = getOrigin() + "/brands";
+      console.log(url);
+      console.log(brand);
     }
   }
 };

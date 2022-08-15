@@ -52,7 +52,7 @@
       <EditBrandForm
         v-if="editBrandDialog"
         :brand="editedBrand"
-        @closeDialog="editBrandialog = false"
+        @closeDialog="editBrandDialog = false"
       />
     </v-dialog>
   </div>

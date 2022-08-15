@@ -26,7 +26,7 @@
             </thead>
             <tbody>
               <tr v-for="gun in gunsList" :key="gun.id">
-                <td>{{ gun.name }}</td>
+                <td>{{ gun.model }}</td>
                 <td>{{ gun.category }}</td>
                 <td>{{ gun.version }}</td>
                 <td>{{ gun.type }}</td>
