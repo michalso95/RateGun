@@ -47,7 +47,7 @@ export default {
       },
     }),
     filteredData() {
-        return this.state.guns.all.filter(x=> x.name.toLowerCase().startsWith(this.filterByNameString.toLowerCase()));
+        return this.state.guns.all.filter(x=> x.model.toLowerCase().startsWith(this.filterByNameString.toLowerCase()));
     },
     currentRoute() {
       if (this.$route.path.endsWith('/')) {

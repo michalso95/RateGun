@@ -13,7 +13,7 @@
       <v-img v-bind:src="item.image" height="200px"></v-img>
 
       <v-card-title>
-        {{ item.name }}
+        {{ item.name ? item.name : item.model }}
       </v-card-title>
 
       <v-card-subtitle>
