@@ -78,7 +78,7 @@ export default {
     catalogData() {
       if (this.categoryName && this.brandName) {
         return this.filterByNameString?.toLowerCase() ?
-          this.state.guns.all.filter(x=> x.name.toLowerCase().startsWith(this.filterByNameString?.toLowerCase())) :
+          this.state.guns.all.filter(x=> x.model.toLowerCase().startsWith(this.filterByNameString?.toLowerCase())) :
           this.state.guns.all;
       }
       else if (this.categoryName) {

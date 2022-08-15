@@ -49,7 +49,7 @@ export default {
     filteredData() {
       if (this.categoryName && this.brandName) {
         this.setTitle('Guns');
-        return this.state.guns.all.filter(x=> x.name.toLowerCase().startsWith(this.filterByNameString.toLowerCase()));
+        return this.state.guns.all.filter(x=> x.model.toLowerCase().startsWith(this.filterByNameString.toLowerCase()));
       }
       else if (this.categoryName) {
         this.setTitle('Brands');
