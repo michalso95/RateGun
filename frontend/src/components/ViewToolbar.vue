@@ -7,8 +7,9 @@
     <v-toolbar-title class="text-h2">{{ title }}</v-toolbar-title>
 
     <v-spacer></v-spacer>
-      <v-icon large>mdi-magnify</v-icon>
+      <v-icon v-if="!hideSearch" large>mdi-magnify</v-icon>
       <v-text-field
+        v-if="!hideSearch"
         v-model="searchField"
         label="Start typing"
         clearable
@@ -24,6 +25,7 @@ export default {
   props: {
     title: String,
     previousRoute: String,
+    hideSearch: Boolean,
   },
 
   data: () => ({
